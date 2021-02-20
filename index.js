@@ -31,6 +31,12 @@ class UI {
 
 		list.appendChild(tr);
 	}
+	delete(e) {
+		if (e.target.classList.contains('delete')) {
+			const deleteBook = e.target.parentElement.parentElement;
+			deleteBook.remove();
+		}
+	}
 }
 
 //addBook
@@ -55,13 +61,10 @@ function addBook() {
 		clearField();
 	}
 }
-
 //deleteBook
 function deleteBook(e) {
-	if (e.target.classList.contains('delete')) {
-		const deleteBook = e.target.parentElement.parentElement;
-		deleteBook.remove();
-	}
+	const ui = new UI();
+	ui.delete(e);
 }
 //clear fields
 function clearField() {
