@@ -8,26 +8,30 @@ document.querySelector('button').addEventListener('click', addBook);
 document.addEventListener('click', deleteBook);
 
 //Book constructor
-function Book(title, author, isbn) {
-	this.title = title;
-	this.author = author;
-	this.isbn = isbn;
+class Book {
+	constructor(title, author, isbn) {
+		this.title = title;
+		this.author = author;
+		this.isbn = isbn;
+	}
 }
 
 //UI constructor
-function UI() {}
-//add Prototype
-UI.prototype.add = function (book) {
-	let tr = document.createElement('tr');
-	tr.innerHTML = `<td>${book.title}</td>
+class UI {
+	constructor() {}
+	//add method
+	add(book) {
+		let tr = document.createElement('tr');
+		tr.innerHTML = `<td>${book.title}</td>
 						<td>${book.author}</td>
 						<td>${book.isbn}</td>
 						<td>
 							<i class="delete fa fa-trash"></i>
 						</td>`;
 
-	list.appendChild(tr);
-};
+		list.appendChild(tr);
+	}
+}
 
 //addBook
 function addBook() {
@@ -51,6 +55,8 @@ function addBook() {
 		clearField();
 	}
 }
+
+//deleteBook
 function deleteBook(e) {
 	if (e.target.classList.contains('delete')) {
 		const deleteBook = e.target.parentElement.parentElement;
