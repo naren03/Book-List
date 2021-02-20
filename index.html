@@ -10,8 +10,28 @@
 			integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
 			crossorigin="anonymous"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+			integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+			crossorigin="anonymous"
+		/>
 		<title>Book List</title>
 	</head>
+	<style>
+		.success,
+		.failure {
+			color: honeydew;
+			font-size: 20px;
+			padding: 10px;
+		}
+		.success {
+			background-color: green;
+		}
+		.failure {
+			background-color: red;
+		}
+	</style>
 	<body>
 		<div class="container">
 			<h3>Add Book</h3>
@@ -21,7 +41,7 @@
 			<label for="author">Author</label>
 			<input id="author" class="u-full-width" type="text" />
 			<label for="isbn">ISBN</label>
-			<input id="ISBN" class="u-full-width" type="text" />
+			<input id="isbn" class="u-full-width" type="text" />
 
 			<button class="u-full-width">Submit</button>
 
@@ -31,14 +51,11 @@
 						<th>Title</th>
 						<th>Author</th>
 						<th>ISBN</th>
+						<th></th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>Monk who sold Ferrari</td>
-						<td>Robin Sharma</td>
-						<td>5555-555-58</td>
-					</tr>
+				<tbody id="list">
+					<tr></tr>
 				</tbody>
 			</table>
 		</div>
